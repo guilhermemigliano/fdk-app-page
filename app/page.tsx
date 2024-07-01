@@ -1,113 +1,129 @@
-import Image from "next/image";
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
+  const year = new Date().getFullYear()
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="flex flex-col min-h-screen max-w-screen bg-zinc-900 py-4 px-10 overflow-x-hidden">
+      <header className="flex h-[60px] border-b border-slate-900 items-center justify-start">
+        <div className="flex flex-row gap-2">
+          <Image
+            src={'/assets/logo.png'}
+            alt="FDK Logo"
+            width={30}
+            height={20}
+            className="h-[40px] w-[40px]"
+          />
+          <div>
+            <span>
+              <label className="text-white text-4xl">FDK</label>
+            </span>
+          </div>
         </div>
-      </div>
+      </header>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <section className="flex flex-col flex-1 justify-start items-start gap-4 mt-10">
+        <div className="flex flex-col items-center justify-center gap-16">
+          <div className="flex flex-col gap-4">
+            <p className="text-white text-4xl">Política de Privacidade</p>
+            <h2 className="text-sm text-white">
+              Data de entrada em vigor: 15 de Outubro de 2023
+            </h2>
+            <p className="text-white text-xl font-thin">
+              O compromisso com a privacidade e a segurança dos dados dos nossos
+              usuários é uma prioridade fundamental para FDK, a desenvolvedora
+              do aplicativo de gerenciamento de jogos de society (FDK). Nossa
+              Política de Privacidade visa explicar como coletamos, usamos e
+              protegemos as informações pessoais dos nossos usuários. Ao
+              utilizar o FDK, você concorda com os termos desta política.
+            </p>
+          </div>
+          <div className="text-white">
+            <ol className="list-decimal px-6 py-0 gap-2 flex flex-col font-bold"></ol>
+            <li className="text-xl list-decimal py-4">Coleta de Informações</li>
+            <p className="font-normal text-sm py-2">
+              1.1 Informações Pessoais: Coletamos informações pessoais que você
+              fornece voluntariamente ao se cadastrar ou utilizar o FDK, tais
+              como nome, endereço de e-mail, senha, data de nascimento, número
+              de telefone. Essas informações são essenciais para oferecer a você
+              os serviços do aplicativo.
+            </p>
+            <p className="font-normal text-sm py-2">
+              1.3. Informações de Uso: Coletamos informações de uso do
+              aplicativo, como páginas visitadas, funcionalidades utilizadas e
+              informações do dispositivo. Essas informações nos ajudam a
+              melhorar o desempenho do aplicativo e aprimorar a experiência do
+              usuário.
+            </p>
+            <li className="text-xl list-decimal py-4">Uso das Informações</li>
+            <p className="font-normal text-sm py-2">
+              2.1. Fornecimento de Serviços: Utilizamos as informações coletadas
+              para fornecer os serviços do FDK, incluindo o gerenciamento das
+              partidas, geração de relatórios, e outras funcionalidades
+              relacionadas.
+            </p>
+            <p className="font-normal text-sm py-2">
+              2.1. Podemos enviar notificações e comunicações relacionadas ao
+              FDK, como atualizações, informações de conta e newsletters. Você
+              pode optar por não receber comunicações não essenciais.
+            </p>
+            <li className="text-xl list-decimal py-4">
+              Compartilhamento de Informações
+            </li>
+            <p className="font-normal text-sm py-2">
+              Não compartilhamos informações pessoais com terceiros, a menos que
+              seja necessário para fornecer os serviços do aplicativo ou cumprir
+              obrigações legais. Isso inclui terceiros como instituições
+              financeiras, prestadores de serviços de processamento de pagamento
+              e parceiros de análise de dados. Exigimos que esses terceiros
+              mantenham a confidencialidade e a segurança dos dados dos nossos
+              usuários.
+            </p>
+            <li className="text-xl list-decimal py-4">Segurança de Dados</li>
+            <p className="font-normal text-sm py-2">
+              Implementamos medidas de segurança técnicas, administrativas e
+              físicas para proteger as informações dos nossos usuários contra
+              acesso não autorizado, divulgação ou modificação.
+            </p>
+            <li className="text-xl list-decimal py-4">Retenção de Dados</li>
+            <p className="font-normal text-sm py-2">
+              Mantemos as informações pessoais dos usuários enquanto forem
+              necessárias para os fins descritos nesta política ou para cumprir
+              obrigações legais. Você pode solicitar a exclusão dos seus dados a
+              qualquer momento, sujeito a requisitos legais de retenção.
+            </p>
+            <li className="text-xl list-decimal py-4">Direitos dos Usuários</li>
+            <p className="font-normal text-sm py-2">
+              Os usuários têm o direito de acessar, corrigir, atualizar ou
+              excluir suas informações pessoais a qualquer momento. Para exercer
+              esses direitos ou para fazer perguntas sobre esta Política de
+              Privacidade, entre em contato conosco em
+              guilhermemigliano@gmail.com;
+            </p>
+            <li className="text-xl list-decimal py-4">
+              Alterações na Política de Privacidade
+            </li>
+            <p className="font-normal text-sm py-2">
+              Reservamos o direito de atualizar esta Política de Privacidade
+              periodicamente. Notificaremos os usuários sobre quaisquer
+              alterações significativas. Recomendamos que você revise
+              regularmente esta política para estar ciente das nossas práticas
+              de privacidade.
+            </p>
+            <li className="text-xl list-decimal py-4">Consentimento</li>
+            <p className="font-normal text-sm py-2">
+              Ao utilizar o FDK, você concorda com esta Política de Privacidade.
+              Se você não concordar com os termos desta política, por favor, não
+              utilize o aplicativo. Esta Política de Privacidade é eficaz a
+              partir de 15 de Outubro de 2023 e substitui todas as versões
+              anteriores.
+            </p>
+          </div>
+        </div>
+      </section>
+      <footer className="text-white flex justify-center items-center">
+        FDK &copy; {year}
+      </footer>
     </main>
-  );
+  )
 }
